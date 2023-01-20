@@ -1,0 +1,24 @@
+{
+  "name": "raghavboob_advancedjavascript_gradedproj2",
+  "version": "1.0.0",
+  "description": "Advanced JavaScript Graded Project",
+  "main": "index.js",
+  "scripts": {
+    "start" : "http-server --port 8080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raghavmaheshwri/RaghavBoob_AdvancedJavascript_gradedproj2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raghavmaheshwri/RaghavBoob_AdvancedJavascript_gradedproj2/issues"
+  },
+  "homepage": "https://github.com/raghavmaheshwri/RaghavBoob_AdvancedJavascript_gradedproj2#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

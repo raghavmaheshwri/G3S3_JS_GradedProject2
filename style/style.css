@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    background: #FFF6F5;
+}
+
+.padding-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.bgright {
+    background: url(https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+.mainLoginSection {
+    height: 100vh;
+}
+
+.headerHead {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.headerHead h1 {
+    font-size: 25px;
+}
+
+.loginSection {
+    border: 1px solid #c7c7c7;
+    padding: 30px;
+    box-shadow: 0px 0px 54px -18px #c7c7c7;
+    background: #f6f7fc;
+    height: 100vh;
+    padding-top: 20vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+
+}
+
+.resumeHeader {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.resumeTemplateMain {
+    padding-bottom: 30px;
+}
+
+.resumeImg img {
+    border-radius: 50%;
+}
+
+.resumeTemplate {
+    background-color: white;
+    border-radius: 15px !important;
+    box-shadow: 0px 0px 47px -17px #bababa;
+}
+
+.resumeTempMainHeader {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #d5f1ff;
+    border-radius: 15px 15px 0px 0px !important;
+}
+
+.resumeTempMainHeaderText {
+    padding-top: 30px;
+}
+
+.resumeRight {
+    background: #ffd9d5;
+    padding: 10px;
+    position: sticky;
+    top: 0px;
+}
+
+.resumeRightSecT {
+    background: gray;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: white;
+}
+
+.resumeRight p {
+    margin-bottom: 0px;
+}
+
+.resumeRightSecDes {
+    text-align: right;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.resumeLeft {
+    padding: 20px;
+}
+
+.resumeLeftSecDes ul {
+    list-style: none;
+}
+
+.resumeLeftSecDes ul li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.resumeLeftSecDes ul li span {
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+
+.listStyledot ul li{
+    list-style:disc;
+}
+
+
+.errorTemplate {
+    background-color: white;
+    border-radius: 15px !important;
+    box-shadow: 0px 0px 47px -17px #bababa;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.errorTemplate span {
+    font-size: 80px;
+}
+
+.logOutButton{
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+}
