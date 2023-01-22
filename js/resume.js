@@ -19,6 +19,8 @@ var searchingChecked = false;
 var resId = 0;
 var datalenght = 0;
 
+
+// Fetching Data from JSON 
 async function fetchData() {
 
     // Fatching Data from JSON
@@ -29,8 +31,11 @@ async function fetchData() {
     return finalResumeData;
 }
 
+// Fetched Data from JSON 
 const fetchedData = await fetchData();
 
+
+// Display Data Function 
 async function displayData(finalResumeData, dataid) {
 
     //Fatching Data from JSON
@@ -70,6 +75,17 @@ async function displayData(finalResumeData, dataid) {
 displayData(fetchedData, resumeArrayId);
 
 
+// Setting up button Click Data Configuartion 
+function buttonConfig() {
+    if (searchingChecked) {
+        resId = searchedArrayId + 1;
+        datalenght = finalSearchedarray.length;
+    } else {
+        resId = resumeArrayId + 1;
+        datalenght = fetchedData.length;
+    }
+}
+
 
 //Prev Button Toogle 
 function prevResumeButtonToogle() {
@@ -78,7 +94,7 @@ function prevResumeButtonToogle() {
             prevBtnDiv.innerHTML = ""
         }
         else {
-            prevBtnDiv.innerHTML = `<button class="btn btn-primary" id="prevButton">Prev</button>`;
+            prevBtnDiv.innerHTML = `<button class="btn btn-primary" id="prevButton">Search Prev</button>`;
         }
     }
     else {
@@ -91,29 +107,29 @@ function prevResumeButtonToogle() {
     }
 }
 
-function buttonConfig() {
-    if (searchingChecked) {
-        resId = searchedArrayId + 1;
-        datalenght = finalSearchedarray.length;
-    } else {
-        resId = resumeArrayId + 1;
-        datalenght = fetchedData.length;
-    }
-}
-
 //Next Button Toogle 
 function nextResumeButtonToogle() {
     buttonConfig();
 
-    if (resId == datalenght) {
-        nextBtnDiv.innerHTML = "";
-    }
-    else {
-        nextBtnDiv.innerHTML = `<button class="btn btn-primary" id="nextButton">Next</button>`;
+    if (searchingChecked) {
+        if (resId == datalenght) {
+            nextBtnDiv.innerHTML = "";
+        }
+        else {
+            nextBtnDiv.innerHTML = `<button class="btn btn-primary" id="nextButton">Search Next</button>`;
+        }
+    } else {
+
+        if (resId == datalenght) {
+            nextBtnDiv.innerHTML = "";
+        }
+        else {
+            nextBtnDiv.innerHTML = `<button class="btn btn-primary" id="nextButton">Next</button>`;
+        }
     }
 }
 
-// Next Resume 
+// Setting up data for Next Resume 
 function nextResume() {
     if (searchingChecked) {
         ++searchedArrayId;
@@ -124,7 +140,7 @@ function nextResume() {
     }
 }
 
-
+// On Click of Next >> Add Event Listner 
 nextBtnDiv.addEventListener('click', async () => {
     buttonConfig();
     if (resId == datalenght) {
@@ -134,7 +150,7 @@ nextBtnDiv.addEventListener('click', async () => {
     }
 })
 
-// Prev Resume 
+// Setting up data for Prev Resume 
 function preResume() {
     if (searchingChecked) {
         --searchedArrayId;
@@ -145,6 +161,8 @@ function preResume() {
     }
 }
 
+
+// On Click Of Button > Add Event Listner 
 prevBtnDiv.addEventListener('click', () => {
     if (searchingChecked) {
         if (searchedArrayId <= 0) {
@@ -162,14 +180,14 @@ prevBtnDiv.addEventListener('click', () => {
 })
 
 
-//searching
-const bspp = await fetchData();
-
-//console.log(bspp.find(items => items.basics.AppliedFor == "Manager"));
 
 
+// SEARCHING
+
+// Array of Searching Data 
 var finalSearchedarray = [];
 
+//Funtion of Searching 
 function searching(searchValve) {
 
     finalSearchedarray = [];
@@ -202,7 +220,7 @@ function searching(searchValve) {
     return finalSearchedarray;
 }
 
-
+// On Input,  searching will called ... 
 document.getElementById('searchText').addEventListener('input', () => {
     var searchValve = document.getElementById('searchText').value;
     //console.log(searchValve);
@@ -223,7 +241,7 @@ document.getElementById('searchText').addEventListener('input', () => {
 
 
 
-// Creating Template 
+// Creating HTML Template of resume  
 function template(personalInfo, userSkills, previousWork, internship, projects, education, achievements, interests) {
     const Userprofile = personalInfo.profiles;
     const userLocation = personalInfo.location;
@@ -389,7 +407,7 @@ function educationData(array) {
 }
 
 
-// Error Template 
+// Error Template If No Data Found 
 function errorTemplate() {
     var errorHtml = `<div class="container">
     <div class="row justify-content-center">
@@ -402,32 +420,6 @@ function errorTemplate() {
 
     return errorHtml;
 }
-
-// Header Template change on searching
-function resumeHeaderSearching() {
-    var searchingPagination = `
-    <div class="container">
-    <div class="row">
-        <div class="col-3 col-sm-3 col-md-3  col-lg-3 col-xl-3 col-xxl-3 text-center padding-0" id="preButtonSearching">
-
-        </div>
-        <div class="col-6 col-sm-6 col-md-6  col-lg-6 col-xl-6 col-xxl-6 padding-0">
-            <div class="mb-3">
-                <input type="search" class="form-control" name="" id="searchText"
-                    placeholder="Search : Job Applied For">
-            </div>
-        </div>
-        <div class="col-3 col-sm-3 col-md-3  col-lg-3 col-xl-3 col-xxl-3 text-center padding-0" id="nextButtonSearching">
-            
-        </div>
-    </div>
-</div>
-    ` ;
-
-    document.getElementById('resumeHeader').innerHTML = searchingPagination;
-
-}
-
 
 
 
